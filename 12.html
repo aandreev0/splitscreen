@@ -7,6 +7,7 @@
     $('#load_btn').prop('value', "Loading ⏳...");
     $('#lf').prop('src',$('#ui').val());
     $('#rf').prop('src',$('#ui').val());
+    $('#rf-bot').prop('src',$('#ui').val());
   }
   $("#ui").on("keydown", function(event) {
       if (event.key === "Enter") {
@@ -27,13 +28,16 @@
       Url: <input id="ui" size=100 value="https://www.biorxiv.org/content/10.1101/000109v1.full.pdf">
       <input type="button" value="Load" id="load_btn" onclick="updateSplitScreen();">
       &nbsp;|&nbsp;
-      <a href="12.html">1:2</a>
+      <a href="index.html">1:1</a>
     </center>
   </td>
 </tr>
 <tr>
-  <td style="width:50%;"><iframe style="width:100%;height:100%;" id="lf"></iframe></td>
-  <td style="width:50%;"><iframe style="width:100%;height:100%;" id="rf" onload="$('#load_btn').prop('value', 'Load');"></iframe></td>
+  <td rowspan=2 style="width:50%;"><iframe style="width:100%;height:100%;" id="lf"></iframe></td>
+  <td style="width:50%;"><iframe style="width:100%;height:100%;" id="rf"></iframe></td>
+</tr>
+<tr>
+  <td style="width:50%;"><iframe style="width:100%;height:100%;" id="rf-bot" onload="$('#load_btn').prop('value', 'Load');"></iframe></td>
 </tr>
 <tr style="height:20px;">
   <td colspan=2>
